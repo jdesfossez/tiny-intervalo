@@ -1,0 +1,34 @@
+tiny-intervalo
+
+This project is the code for a DIY infra-red intervalometer (especially useful
+to do time lapse photography) and basic infra-red remote.
+
+It runs on an ATtiny25 with an IR LED, two transistor to amplify the signal, an
+on/off switch and a pushbutton (I will post the schematics some day or ask me).
+
+As of now the only supported device is the Sony NEX-5 since it is the one I
+have, but provided the good IR code, it would be trivial to adapt this code to
+support any device.
+
+When the remote is powered on, it runs in a infinite loop of shooting a
+photograph every 1 second with a 2 second delay (on the camera) so on your
+picture you don't appear to hold the remote...
+
+The first push on the push button switch the trigger to immediate shoot every 1
+second. From this point, every push on the button will add 1 second of delay
+between each shoot. So if you want to take a picture every 10 seconds, power on
+the remote, click one time to make it in instant shoot mode and then 9 times to
+add 9 seconds to the original 1 second.
+
+The Makefile provided is customized for my needs (I use an arduino to program
+my chip) so check and adapt it before using the writeflash command.
+
+I hope this project will be useful to someone, it took me quite a long time to
+figure out how to use the PWM in the ATtiny25 so I thought it could be good to
+share.
+
+Feedback is very welcome :-)
+
+Have fun !
+
+Julien
